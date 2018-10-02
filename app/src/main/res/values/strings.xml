@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TechSix_Android</string>
+
+
+    <string-array name="sexos">
+        <item>Selecione...</item>
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+
+    <string-array name="estadoCivil">
+        <item>Selecione...</item>
+        <item>Casado</item>
+        <item>Solteiro</item>
+    </string-array>
+
+
+</resources>

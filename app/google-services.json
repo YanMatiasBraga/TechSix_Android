@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "307876511268",
+    "firebase_url": "https://tecksix-f6d75.firebaseio.com",
+    "project_id": "tecksix-f6d75",
+    "storage_bucket": "tecksix-f6d75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307876511268:android:999019b538489746",
+        "android_client_info": {
+          "package_name": "com.techsix.techsix_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307876511268-vie4o7j3qgmftel5cc073am3m46sm3l6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJCT67ImvP4Sfo3teBxlnPxaCvJEtAOrA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
