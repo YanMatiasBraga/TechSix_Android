@@ -39,53 +39,49 @@ public class LoginActivity extends AppCompatActivity {
 
         autenticacao = FirebaseAuth.getInstance();
 
-                                    btnEntrar.setOnClickListener(new View.OnClickListener() {
-                                           @Override
-                                           public void onClick(View view) {
-                                               if (etEmail.getText().toString().equalsIgnoreCase("Oftclinicas@gmail.com") && etSenha.getText().toString() == "123456"){
-                                                    Intent i = new Intent(LoginActivity.this, TelaInicialAdm.class);
-                                                    startActivity(i);
-                                               } else {
-
-                                                   Intent i = new Intent(LoginActivity.this, CadastroPacienteActivity.class);
-                                                   startActivity(i);
-
-                                               }
-                                           }
-                                       });
-
-            stateListener = new FirebaseAuth.AuthStateListener() {
-                @Override
-                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    FirebaseUser user = firebaseAuth.getCurrentUser();
-                    if (user != null){
-                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(i);
-                    }
-                }
-            };
-
         btnEntrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                entrar();
-            }
-        });
+               @Override
+               public void onClick(View view) {
+                   if (etEmail.getText().toString().equalsIgnoreCase("Oftclinicas@gmail.com") && etSenha.getText().toString().equals("123456")){
+                        Intent i = new Intent(LoginActivity.this, TelaInicialAdm.class);
+                        startActivity(i);
+                   } else {
+
+//                       Intent i = new Intent(LoginActivity.this, CadastroPacienteActivity.class);
+//                       startActivity(i);
+                       entrar();
+
+                   }
+               }
+           });
+
+//            stateListener = new FirebaseAuth.AuthStateListener() {
+//                @Override
+//                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                    FirebaseUser user = firebaseAuth.getCurrentUser();
+//                    if (user != null){
+//                        Intent i = new Intent(LoginActivity.this, TelaInicial.class);
+//                        startActivity(i);
+//                    }
+//                }
+//            };
+
+
     }
 
 
     @Override
     protected void onStart() {
         super.onStart();
-        autenticacao.addAuthStateListener(stateListener);
+  //      autenticacao.addAuthStateListener(stateListener);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (stateListener != null){
-            autenticacao.removeAuthStateListener(stateListener);
-        }
+//        if (stateListener != null){
+//            autenticacao.removeAuthStateListener(stateListener);
+//        }
     }
 
     private void entrar(){
@@ -98,6 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()){
                         Toast.makeText(LoginActivity.this, "Email ou senha inválidos", Toast.LENGTH_LONG).show();
+                    }else{
+                        Intent i = new Intent(LoginActivity.this, TelaInicial.class);
+                        startActivity(i);
+
                     }
                 }
             });

@@ -39,6 +39,7 @@
 
     </Spinner>
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,6 +52,6 @@
         android:layout_height="wrap_content"
         android:text="Voltar"
         android:textSize="20sp"
-        android:id="@+id/btnVoltarAdm"/>
+        android:id="@+id/btnVoltarCadastrarHorario"/>
 
 </LinearLayout>

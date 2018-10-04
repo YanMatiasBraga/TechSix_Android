@@ -3,8 +3,15 @@ package com.techsix.techsix_android.model;
 public class Consulta {
 
 
-    private String id, data, hora, medico;
+    private String id, data, hora, medico, codPaciente;
 
+    public String getCodPaciente() {
+        return codPaciente;
+    }
+
+    public void setCodPaciente(String codPaciente) {
+        this.codPaciente = codPaciente;
+    }
 
     public String getId() {
         return id;

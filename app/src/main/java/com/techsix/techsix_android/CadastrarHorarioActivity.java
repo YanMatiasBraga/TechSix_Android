@@ -9,9 +9,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.techsix.techsix_android.model.Consulta;
+
 
 /**
  * Created by android on 01/10/2018.
@@ -23,9 +25,11 @@ public class CadastrarHorarioActivity extends AppCompatActivity {
     private Spinner spHora;
 
     private Button btnSalvarHorarios;
+    private Button btnVoltar;
 
     private FirebaseDatabase database;
     private DatabaseReference reference;
+
 
 
 
@@ -36,10 +40,12 @@ public class CadastrarHorarioActivity extends AppCompatActivity {
 
         etDataCadastro = (EditText) findViewById(R.id.etDataCadastro);
         spHora = (Spinner) findViewById(R.id.spHora);
-        etNomeMedico = (EditText) findViewById(R.id.etNomeCompleto);
 
 
         btnSalvarHorarios = (Button) findViewById(R.id.btnSalvarHorarios);
+        btnVoltar = (Button) findViewById(R.id.btnVoltarCadastrarHorario);
+
+
 
         database = FirebaseDatabase.getInstance();
         reference = database.getReference();
@@ -50,29 +56,38 @@ public class CadastrarHorarioActivity extends AppCompatActivity {
                 cadastrarHorarioConulta();
             }
         });
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
     private void cadastrarHorarioConulta(){
         String data = etDataCadastro.getText().toString();
         String hora = spHora.getSelectedItem().toString();
-        String medico = etNomeMedico.getText().toString();
 
-        if (!medico.isEmpty() && !data.isEmpty() && !hora.isEmpty()){
+        if (!data.isEmpty() && !hora.isEmpty()) {
             Consulta consulta = new Consulta();
-            consulta.setMedico(medico);
             consulta.setData(data);
             consulta.setHora(spHora.getSelectedItem().toString());
-            }
+            String codPaciente = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            consulta.setCodPaciente(  codPaciente );
 
 
-            reference.child("data").push().setValue(data);
-            reference.child("hora").push().setValue(hora);
+            reference.child("consultas").push().setValue(consulta);
 
             Toast.makeText(this, "Horário e Data cadastrados com sucesso!", Toast.LENGTH_LONG);
 
             etDataCadastro.setText("");
 
             spHora.setSelection(0);
+
+        }
 
         }
 
