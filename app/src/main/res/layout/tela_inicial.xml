@@ -4,32 +4,14 @@
     android:orientation="vertical">
 
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Informações pessoais"
-        android:textSize="25dp"
-        android:id="@+id/btnInformacoes"/>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Marcar Consulta"
         android:textSize="25dp"
-        android:id="@+id/btnMarcarConsultas"/>
+        android:id="@+id/btnMarcarConsultas"
+        android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Consultas:"
-        android:textSize="25dp"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lvConsultasMarcadas">
-
-    </ListView>
 
 </LinearLayout>
