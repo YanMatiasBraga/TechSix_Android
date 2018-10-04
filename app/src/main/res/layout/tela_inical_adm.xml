@@ -12,13 +12,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastrar Horários"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/btnCadastrarHorarios"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Visualizar Consultas Marcadas"
         android:layout_gravity="center_horizontal"
         android:id="@+id/btnVisualizarConsultas"/>

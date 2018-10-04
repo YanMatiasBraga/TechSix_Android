@@ -26,7 +26,7 @@ public class TelaInicialAdm extends AppCompatActivity{
             Intent intent = new Intent();
         }
 
-        if(item.getItemId() == R.id.btnCadastrarHorarios)
+        if(item.getItemId() == R.id.btnMarcarConsultas)
         {
             Intent i = new Intent(TelaInicialAdm.this, CadastroPacienteActivity.class);
             startActivity(i);
